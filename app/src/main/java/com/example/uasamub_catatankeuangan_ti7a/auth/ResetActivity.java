@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.exsa.authcrud.R;
+import com.example.uasamub_catatankeuangan_ti7a.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +43,7 @@ public class ResetActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                com.exsa.authcrud.auth.ResetActivity.this.finish();
+                ResetActivity.this.finish();
             }
         });
 
@@ -53,7 +53,7 @@ public class ResetActivity extends AppCompatActivity {
                 String userEmail = email.getText().toString().trim();
 
                 if (TextUtils.isEmpty(userEmail)) {
-                    Toast.makeText(com.exsa.authcrud.auth.ResetActivity.this, "Enter your register email id", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetActivity.this, "Enter your register email id", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -63,9 +63,9 @@ public class ResetActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(com.exsa.authcrud.auth.ResetActivity.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ResetActivity.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(com.exsa.authcrud.auth.ResetActivity.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ResetActivity.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
                                 }
 
                                 progressBar.setVisibility(View.GONE);

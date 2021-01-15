@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         //auto login process
         //move to main activity if user already sign in
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(com.exsa.authcrud.auth.LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
 
@@ -60,14 +60,14 @@ public class LoginActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                com.exsa.authcrud.auth.LoginActivity.this.startActivity(new Intent(com.exsa.authcrud.auth.LoginActivity.this, com.exsa.authcrud.auth.SignupActivity.class));
+                LoginActivity.this.startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             }
         });
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                com.exsa.authcrud.auth.LoginActivity.this.startActivity(new Intent(com.exsa.authcrud.auth.LoginActivity.this, com.exsa.authcrud.auth.ResetActivity.class));
+                LoginActivity.this.startActivity(new Intent(LoginActivity.this, ResetActivity.class));
             }
         });
 
@@ -78,12 +78,12 @@ public class LoginActivity extends AppCompatActivity {
                 String userpassword = password.getText().toString();
 
                 if (TextUtils.isEmpty(useremail)) {
-                    Toast.makeText(com.exsa.authcrud.auth.LoginActivity.this.getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this.getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(userpassword)) {
-                    Toast.makeText(com.exsa.authcrud.auth.LoginActivity.this.getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this.getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -99,14 +99,14 @@ public class LoginActivity extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
 
                                     if (userpassword.length() < 6) {
-                                        password.setError(com.exsa.authcrud.auth.LoginActivity.this.getString(R.string.minimum_password));
+                                        password.setError(LoginActivity.this.getString(R.string.minimum_password));
                                     } else {
-                                        Toast.makeText(com.exsa.authcrud.auth.LoginActivity.this, com.exsa.authcrud.auth.LoginActivity.this.getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, LoginActivity.this.getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
                                     }
 
                                 } else {
-                                    com.exsa.authcrud.auth.LoginActivity.this.startActivity(new Intent(com.exsa.authcrud.auth.LoginActivity.this, MainActivity.class));
-                                    com.exsa.authcrud.auth.LoginActivity.this.finish();
+                                    LoginActivity.this.startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    LoginActivity.this.finish();
                                 }
                             }
                         });

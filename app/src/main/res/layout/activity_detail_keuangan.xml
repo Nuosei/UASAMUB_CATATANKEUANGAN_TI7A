@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:background="#fff">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tx_title">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        app:cardCornerRadius="2dp"
+                        app:cardUseCompatPadding="true"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp">
+
+                                <TextView
+                                    android:id="@+id/text_max"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#03A9F4"
+                                    android:gravity="center"
+                                    android:padding="10dp"
+                                    android:text="DETAIL CATATAN"
+                                    android:textColor="#FFF"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_one"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp">
+
+                                <TextView
+                                    android:id="@+id/tx_kategori"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="ket"
+                                    android:textColor="#03A9F4"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/tx_ket_max"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tx_kategori"
+                                    android:text="kategori"
+                                    android:textColor="#7E7C7C"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/relative_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp">
+
+                                <TextView
+                                    android:id="@+id/tx_tgl"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="tanggal"
+                                    android:textColor="#03A9F4"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/tx_tgl_ago_max"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tx_tgl"
+                                    android:text="waktu"
+                                    android:textColor="#7E7C7C"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/relative"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp">
+
+                                <TextView
+                                    android:id="@+id/tx_nominal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:text="Your text"
+                                    android:textColor="#03A9F4"
+                                    android:textSize="18sp" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/relative_f"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp">
+
+                                <TextView
+                                    android:id="@+id/tx_ket"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="keterangan"
+                                    android:textColor="#7E7C7C"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/tx_detail_ket"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tx_ket"
+                                    android:text="Yourtext"
+                                    android:textColor="#03A9F4"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

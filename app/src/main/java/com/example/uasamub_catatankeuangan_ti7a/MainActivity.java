@@ -1,10 +1,5 @@
 package com.example.uasamub_catatankeuangan_ti7a;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -13,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,13 +22,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.uasamub_catatankeuangan_ti7a.auth.LoginActivity;
 import com.example.uasamub_catatankeuangan_ti7a.fragment.FragmentPemasukan;
 import com.example.uasamub_catatankeuangan_ti7a.fragment.FragmentPengeluaran;
 import com.example.uasamub_catatankeuangan_ti7a.models.ModelKeuangan;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -110,8 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String userid = user.getEmail();
 
                 if (user == null) {
-                    MainActivity.this.startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                    MainActivity.this.finish();
+                    com.example.uasamub_catatankeuangan_ti7a.MainActivity.this.startActivity(new Intent(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this, LoginActivity.class));
+                    com.example.uasamub_catatankeuangan_ti7a.MainActivity.this.finish();
                 }
             }
         };
@@ -296,12 +293,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(isEmpty(getnominal) && isEmpty(getket) && isEmpty(gettgl)){
 
-                    Toast.makeText(MainActivity.this, "Data tidak boleh ada yang kosong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this, "Data tidak boleh ada yang kosong", Toast.LENGTH_SHORT).show();
                 }else {
 
                     getReference.child(getUserID).push()
                             .setValue(new ModelKeuangan(getcategori, getnominal, getket, gettgl))
-                            .addOnSuccessListener(MainActivity.this, new OnSuccessListener() {
+                            .addOnSuccessListener(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this, new OnSuccessListener() {
                                 @Override
                                 public void onSuccess(Object o) {
                                     if (getcategori.equals("pemasukan")){
@@ -331,7 +328,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         FT2.replace(R.id.L_fragment, f_pengeluaran);
                                         FT2.commit();
                                     }
-                                    Toast.makeText(MainActivity.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
@@ -376,12 +373,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId()) {
             case R.id.btn_profile:
 
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this, com.example.uasamub_catatankeuangan_ti7a.ProfileActivity.class);
                 startActivity(intent);
                 return true;
 
             case R.id.btn_exit:
-                AlertDialog.Builder alertIns = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog.Builder alertIns = new AlertDialog.Builder(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this);
                 alertIns.setPositiveButton("Yes", logout).setNegativeButton("No", null)
                         .setIcon(android.R.drawable.ic_menu_info_details).setTitle("LOGOUT")
                         .setMessage("Apakah anda ingin keluar dari aplikasi ini? ").show();
@@ -398,7 +395,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             firebaseAuth.signOut();
             firebaseAuth.removeAuthStateListener(FirebaseAuth::signOut);
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(com.example.uasamub_catatankeuangan_ti7a.MainActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 

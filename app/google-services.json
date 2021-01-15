@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "730192595104",
+    "firebase_url": "https://uasamub-catatankeuangan-ti7a-default-rtdb.firebaseio.com",
+    "project_id": "uasamub-catatankeuangan-ti7a",
+    "storage_bucket": "uasamub-catatankeuangan-ti7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730192595104:android:6c658d1365fc0e0c02e1c5",
+        "android_client_info": {
+          "package_name": "com.example.uasamub_catatankeuangan_ti7a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730192595104-50qfihd252lj9s9dd47qh1u3ra5hp0rq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh5IoBL9d3V6-mC8Txwh9yaj7l16jV-mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730192595104-50qfihd252lj9s9dd47qh1u3ra5hp0rq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
